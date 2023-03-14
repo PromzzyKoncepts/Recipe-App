@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+@import "navbar.css";
+@import "home.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* color: black; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image:
+    linear-gradient(
+      to left,
+      rgb(223, 217, 217),
+      rgb(230, 230, 231)
+    );
+}
