@@ -7,7 +7,10 @@ class RecipeItemsController < ApplicationController
   end
 
   # GET /recipe_items/1 or /recipe_items/1.json
-  def show; end
+  def show
+    @food = Food.all
+    @recipe_food = RecipeFood.all
+  end
 
   # GET /recipe_items/new
   def new
@@ -24,6 +27,7 @@ class RecipeItemsController < ApplicationController
   # POST /recipe_items or /recipe_items.json
   def create
     @recipe_item = RecipeItem.new(recipe_item_params)
+    @recipe_item.user_id = current_user.id
 
     respond_to do |format|
       if @recipe_item.save
