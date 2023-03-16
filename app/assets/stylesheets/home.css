@@ -30,7 +30,7 @@
 }
 
 .salad {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 500px;
@@ -47,6 +47,8 @@
   background-color: red;
   color: white;
   text-decoration: none;
+  margin-bottom: 80px;
+  z-index: 95;
 }
 
 .btn_home:hover {
@@ -55,4 +57,60 @@
   border: 3px solid red;
   padding: 9px;
   font-size: 21px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bowl {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .home_title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .home_title_h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .home_title {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .home_title_h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .bowl {
+    width: 70%;
+  }
+
+  .salad {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+  }
+
+  .btn_home {
+    padding: 10px;
+    width: 150px;
+  }
+
+  .btn_home:hover {
+    padding: 7.2px;
+    width: 150px;
+  }
 }

@@ -1,8 +1,20 @@
 <header>
     <nav>
         <ul class="nav_list">
+            <button class="hamburger-btn">
+                <span class="hamburger-icon">
+                <li class="menu"></li>
+                <li class="menu"></li>
+                <li class="menu"></li>
+                </span>
+            </button>
             <li><%= link_to "Recipe App", root_path, class: "nav-title" %></li>
-            <li class="nav_items"><%= link_to "Foods", foods_path, class: "nav-item" %>
+            <li class="nav_items">
+            <button class="close-btn">
+               <span class="close-icon">X</span>
+            </button>
+            <%= link_to "Home", root_path, class: "nav-item mobile-home" %>
+            <%= link_to "Foods", foods_path, class: "nav-item" %>
             <%= link_to "Recipes", recipe_items_path, class: "nav-item" %>
             <%= link_to "Public Recipes", public_recipes_path, class: "nav-item" %>
             <%= link_to "Shopping List", general_shopping_lists_path, class: "nav-item" %>
