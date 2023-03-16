@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
 @import "navbar.css";
 @import "home.css";
 @import "form.css";
@@ -26,7 +26,7 @@
   padding: 0;
 
   /* color: black; */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'poppins', Arial;
 }
 
 body {
