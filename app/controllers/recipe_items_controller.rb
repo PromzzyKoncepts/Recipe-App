@@ -25,7 +25,6 @@ class RecipeItemsController < ApplicationController
     @recipe_item = RecipeItem.new(recipe_item_params)
     @recipe_item.user_id = current_user.id
 
-
     respond_to do |format|
       if @recipe_item.save
         format.html { redirect_to recipe_item_url(@recipe_item), notice: 'Recipe item was successfully created.' }
