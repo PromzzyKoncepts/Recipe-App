@@ -88,3 +88,93 @@ nav {
   gap: 15px;
   height: 35px;
 }
+
+.hamburger-btn,
+.close-btn,
+.mobile-home {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .nav-title {
+    font-size: 23px;
+  }
+
+  .nav_name {
+    font-size: 20px;
+    padding-bottom: 2px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+    padding-bottom: 3px;
+  }
+
+  .nav_items {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  .menu {
+    border: 3px solid red;
+    border-radius: 2px;
+    width: 40px;
+    margin-top: 5px;
+  }
+
+  .close-btn {
+    border: none;
+  }
+
+  .close-icon {
+    position: fixed;
+    right: 30px;
+    color: white;
+    font-size: 20px;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  .close-icon:hover {
+    color: red;
+  }
+
+  .nav_items {
+    display: flex;
+    display: none;
+    background-color: rgb(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    z-index: 98;
+  }
+
+  .nav-item {
+    display: flex;
+    color: white;
+    margin-bottom: 30px;
+  }
+
+  .nav-title {
+    display: none;
+  }
+
+  .nav_name {
+    font-size: 20px;
+  }
+
+  .mobile-home {
+    display: block;
+  }
+}
