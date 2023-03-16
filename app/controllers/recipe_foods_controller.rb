@@ -14,6 +14,11 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new
   end
 
+  def general_shopping_lists
+    @recipe_foods = RecipeFood.all
+    @food_count = RecipeFood.select(:food_id).distinct.count
+  end
+
   # GET /recipe_foods/1/edit
   def edit; end
 

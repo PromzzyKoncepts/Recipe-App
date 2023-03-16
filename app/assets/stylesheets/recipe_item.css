@@ -1,8 +1,8 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap");
 
 .card-container {
-  font-family: 'poppins', Arial;
+  font-family: "poppins", Arial;
   gap: 30px;
   margin-bottom: 20px;
   padding: 20px;
@@ -142,4 +142,12 @@
   border: 1px solid;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.sum_amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  font-size: 20px;
 }

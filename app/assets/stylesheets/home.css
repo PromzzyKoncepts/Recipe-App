@@ -75,6 +75,7 @@
     text-align: center;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .home_container {
     display: flex;
