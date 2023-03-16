@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :recipe_items
   resources :foods
   resources :users
+  get '/public_recipes', to: 'recipe_items#public_recipes'
+  get '/general_shopping_lists', to: 'foods#general_shopping_lists'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

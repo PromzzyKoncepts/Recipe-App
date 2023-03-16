@@ -14,6 +14,10 @@ class RecipeItemsController < ApplicationController
     @recipe_item = RecipeItem.new
   end
 
+  def public_recipes
+    @recipes = RecipeItem.includes(:user).select(&:public)
+  end
+
   # GET /recipe_items/1/edit
   def edit; end
 
