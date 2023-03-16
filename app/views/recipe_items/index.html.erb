@@ -4,10 +4,27 @@
 
 <div id="recipe_items">
   <% @recipe_items.each do |recipe_item| %>
-    <%= render recipe_item %>
-    <p>
-      <%= link_to "Show this recipe item", recipe_item %>
-    </p>
+    <div class= "card-container">
+      <div class= "card-header">
+        <h3>Recipe <%= recipe_item.id%></h3>
+        <h2><%= link_to recipe_item.name, recipe_item%></h2>
+        <div class= "view-delete">        
+          <div>
+            <p>
+              <%= link_to "View", recipe_item %>
+            </p>
+          </div>
+          <div>
+            <%= button_to "Delete", recipe_item, method: :delete, class: "delete" %>
+          </div>
+        </div>
+      </div>
+      <div class= "description">
+        <h4>Description:</h4>
+        <p><%=recipe_item.description %></p>
+      </div>
+    </div>
+
   <% end %>
 </div>
 
