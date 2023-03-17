@@ -20,7 +20,6 @@ class RecipeItemsController < ApplicationController
   def public_recipes
     @recipes = RecipeItem.includes(:user).where(public: true).order(created_at: :desc)
     @recipe_food = RecipeFood.all
-    @recipe_items = RecipeItem.all
   end
 
   # GET /recipe_items/1/edit

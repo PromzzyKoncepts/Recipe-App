@@ -51,6 +51,8 @@ gem 'devise'
 # Install cancancan
 gem 'cancancan'
 
+gem 'turbolinks', '~> 5.2.0'
+
 # Install bootstrap
 # gem 'bootstrap', '~> 5.1'
 

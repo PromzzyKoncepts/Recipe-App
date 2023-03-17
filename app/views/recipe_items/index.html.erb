@@ -1,6 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Recipe items</h1>
+<h1 class="food_title">Recipe items</h1>
 
 <div id="recipe_items">
   <% @recipe_items.each do |recipe_item| %>
@@ -14,7 +12,7 @@
               <%= link_to "View", recipe_item %>
             </p>
           </div>
-          <% if can? :delete, @recipe_item %>
+          <% if can? :delete, recipe_item %>
           <div>
             <%= button_to "Delete", recipe_item, method: :delete, class: "delete" %>
           </div>
@@ -30,4 +28,4 @@
   <% end %>
 </div>
 
-<%= link_to "New recipe item", new_recipe_item_path %>
+<%= link_to "Add new recipe", new_recipe_item_path, class: "btn_new_food" %>

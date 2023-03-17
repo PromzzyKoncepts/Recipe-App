@@ -12,6 +12,8 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
+    @foods = Food.all
+    @recipe_items = RecipeItem.all
   end
 
   def general_shopping_lists
