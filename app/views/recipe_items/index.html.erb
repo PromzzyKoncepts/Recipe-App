@@ -14,9 +14,11 @@
               <%= link_to "View", recipe_item %>
             </p>
           </div>
+          <% if can? :delete, @recipe_item %>
           <div>
             <%= button_to "Delete", recipe_item, method: :delete, class: "delete" %>
           </div>
+          <%end%>
         </div>
       </div>
       <div class= "description">

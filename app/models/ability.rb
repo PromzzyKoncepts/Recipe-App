@@ -12,7 +12,7 @@ class Ability
     can :manage, RecipeFood
 
     return unless user.admin?
-    can :manage, :all
 
+    can :manage, :all
   end
 end
