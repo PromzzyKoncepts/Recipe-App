@@ -9,7 +9,7 @@ class RecipeItemsController < ApplicationController
   # GET /recipe_items/1 or /recipe_items/1.json
   def show
     @food = Food.all
-    @recipe_food = RecipeFood.all
+    @recipe_food = RecipeFood.includes(:food)
   end
 
   # GET /recipe_items/new
