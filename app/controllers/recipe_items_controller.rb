@@ -9,7 +9,7 @@ class RecipeItemsController < ApplicationController
   # GET /recipe_items/1 or /recipe_items/1.json
   def show
     @food = Food.all
-    @recipe_food = RecipeFood.all
+    @recipe_food = RecipeFood.includes(:food)
   end
 
   # GET /recipe_items/new
@@ -20,7 +20,6 @@ class RecipeItemsController < ApplicationController
   def public_recipes
     @recipes = RecipeItem.includes(:user).where(public: true).order(created_at: :desc)
     @recipe_food = RecipeFood.all
-    @recipe_items = RecipeItem.all
   end
 
   # GET /recipe_items/1/edit

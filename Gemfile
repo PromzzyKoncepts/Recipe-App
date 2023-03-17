@@ -51,6 +51,8 @@ gem 'devise'
 # Install cancancan
 gem 'cancancan'
 
+gem 'turbolinks', '~> 5.2.0'
+
 # Install bootstrap
 # gem 'bootstrap', '~> 5.1'
 
@@ -76,6 +78,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'bullet', group: 'development'
 end
 
 group :test do

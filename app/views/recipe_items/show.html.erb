@@ -1,9 +1,8 @@
-<p style="color: green"><%= notice %></p><br/>
-<h2>Recipe <%= @recipe_item.id%> </h2>
+<h2 class="food_title">Recipe <%= @recipe_item.id%> </h2>
 <%= render @recipe_item %>
 
 <div class= "recipe-link">
-<%= link_to "Generate shopping list", new_user_path%>
+<%= link_to "Generate shopping list", general_shopping_lists_path%>
 <% if can? :delete, @recipe_item %>
   <%= link_to "Add new ingredient", new_recipe_food_path%>
 <%end%>
