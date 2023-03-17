@@ -4,7 +4,9 @@
 
 <div class= "recipe-link">
 <%= link_to "Generate shopping list", new_user_path%>
-<%= link_to "Add new ingredient", new_recipe_food_path%>
+<% if can? :delete, @recipe_item %>
+  <%= link_to "Add new ingredient", new_recipe_food_path%>
+<%end%>
 </div>
 
 <table id="foods">
@@ -12,7 +14,9 @@
     <th>Food</th>
     <th>Quantity</th>
     <th>Value</th>
+    <% if can? :delete, @recipe_item %>
     <th>Actions</th>
+    <%end%>
   </tr>
   <% @recipe_food.each do |item|%>
     <%if @recipe_item.id == item.recipe_item_id%>
@@ -20,16 +24,19 @@
         <td class="table_data"><%= item.food.name %></td>
         <td class="table_data"><%= item.quantity%><%= item.food.measurement_unit%></td>
         <td class="table_data">$<%= item.quantity * item.food.price%></td>
-        <td class="table_data modify"><%= button_to "Delete", item, method: :delete, class: "btn_delete" %><%= link_to "Modify", edit_recipe_food_path, class: "btn_delete" %></td>
+        <% if can? :delete, @recipe_item %>
+          <td class="table_data modify"><%= button_to "Delete", item, method: :delete, class: "btn_delete" %><%= link_to "Modify", edit_recipe_food_path, class: "btn_delete" %></td>
+        <%end%>
       </tr>
     <%end%>
   <%end%>
 </table>
 
 <div class= "links">
-  <%= link_to "Edit", edit_recipe_item_path(@recipe_item), class: "delete" %> 
+  <% if can? :delete, @recipe_item %>
+    <%= link_to "Edit", edit_recipe_item_path(@recipe_item), class: "delete" %> 
 
-  <%= button_to "Delete", @recipe_item, method: :delete, class: "delete" %>
-
+    <%= button_to "Delete", @recipe_item, method: :delete, class: "delete" %>
+  <%end%>
   <%= link_to "Go Back", recipe_items_path, class: "delete" %>
 </div>
