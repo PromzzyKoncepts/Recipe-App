@@ -1,0 +1,31 @@
+<div id="recipe-details">
+  <div>
+    <p>
+      <strong>Name:</strong>
+      <%= recipe_item.name %>
+    </p>
+
+    <p>
+      <strong>Preparation time:</strong>
+      <%= recipe_item.preparation_time %>hrs
+    </p>
+
+    <p>
+      <strong>Cooking time:</strong>
+      <%= recipe_item.cooking_time %>hrs
+    </p>
+
+    <p>
+      <strong>Follow these steps:</strong>
+      <%= recipe_item.description %>
+    </p>
+  </div>
+
+  <div>
+    <p> <strong>public:</strong>
+      <input type="checkbox" <%= 'checked' if recipe_item.public %> disabled>
+    </p>
+  </div>
+
+
+</div>

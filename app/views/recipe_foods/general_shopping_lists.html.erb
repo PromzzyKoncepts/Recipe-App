@@ -1,0 +1,23 @@
+<h1 class="food_title">Shopping List</h1>
+
+<div class="sum_amount">
+<p>Amount of food items to buy: <%= @food_count %> </p>
+<% food_quantities_prices = @recipe_foods.map { |food| food.quantity * food.food.price } %>
+<p>Total value of food needed: <%= number_to_currency(food_quantities_prices.sum) %> </p>
+
+</div> </br>
+
+<table id="foods">
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    </tr>
+    <% @recipe_foods.group_by{|food| food.food.name}.each do |name, foods| %>
+    <tr>
+      <td class="table_data"><%= name %></td>
+      <td class="table_data"><%= foods.sum(&:quantity) %></td>
+      <td class="table_data"><%= number_to_currency(foods.first.food.price * foods.sum(&:quantity))%></td>
+    </tr>
+  <% end %>
+  </table>

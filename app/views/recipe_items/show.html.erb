@@ -1,0 +1,41 @@
+<h2 class="food_title">Recipe <%= @recipe_item.id%> </h2>
+<%= render @recipe_item %>
+
+<div class= "recipe-link">
+<%= link_to "Generate shopping list", general_shopping_lists_path%>
+<% if can? :delete, @recipe_item %>
+  <%= link_to "Add new ingredient", new_recipe_food_path%>
+<%end%>
+</div>
+
+<table id="foods">
+  <tr class= "table-heading">
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <% if can? :delete, @recipe_item %>
+    <th>Actions</th>
+    <%end%>
+  </tr>
+  <% @recipe_food.each do |item|%>
+    <%if @recipe_item.id == item.recipe_item_id%>
+      <tr id="<%= dom_id item %>">
+        <td class="table_data"><%= item.food.name %></td>
+        <td class="table_data"><%= item.quantity%><%= item.food.measurement_unit%></td>
+        <td class="table_data">$<%= item.quantity * item.food.price%></td>
+        <% if can? :delete, @recipe_item %>
+          <td class="table_data modify"><%= button_to "Delete", item, method: :delete, class: "btn_delete" %><%= link_to "Modify", edit_recipe_food_path, class: "btn_delete" %></td>
+        <%end%>
+      </tr>
+    <%end%>
+  <%end%>
+</table>
+
+<div class= "links">
+  <% if can? :delete, @recipe_item %>
+    <%= link_to "Edit", edit_recipe_item_path(@recipe_item), class: "delete" %> 
+
+    <%= button_to "Delete", @recipe_item, method: :delete, class: "delete" %>
+  <%end%>
+  <%= link_to "Go Back", recipe_items_path, class: "delete" %>
+</div>

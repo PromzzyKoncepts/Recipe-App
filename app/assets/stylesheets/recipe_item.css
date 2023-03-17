@@ -1,0 +1,143 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap");
+
+.card-container {
+  font-family: "poppins", Arial;
+  gap: 30px;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.modify a {
+  text-decoration: none;
+}
+
+.card-header a {
+  color: #282828;
+  text-decoration: none;
+}
+
+.links a {
+  color: #282828;
+  text-decoration: none;
+}
+
+.recipe-link a {
+  background: #fff;
+  padding: 10px 30px;
+  border: 1px solid #282828;
+  border-radius: 5px;
+  color: #282828;
+  text-decoration: none;
+}
+
+.card-header a:hover {
+  color: #610000;
+}
+
+.view-delete {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.delete {
+  padding: 4px 8px;
+  color: #cf0101;
+  background: #f4f4f4;
+  border: 1px solid #282828;
+}
+
+#recipe-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 70%;
+}
+
+#recipe-details p {
+  margin: 25px 20px;
+}
+
+.recipe-link {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 10px;
+}
+
+.recipe-link a:hover {
+  background: #282828;
+  color: #fff;
+  box-shadow: 4px 4px 7px #4e4e4e;
+}
+
+.links a:hover {
+  color: green;
+}
+
+.modify {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.edit-recipe {
+  background-color: #ffffffe3;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 7px;
+  box-shadow: 0 0 5px #7e7e7e;
+}
+
+.field textarea {
+  width: 100%;
+  padding-top: 8px;
+  color: #282828;
+  border: none;
+  border-bottom: 1px solid #282828;
+  outline: none;
+  background: transparent;
+}
+
+.public {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.update input {
+  padding: 10px 15px;
+  color: #a50000;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sum_amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sum_amount {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+}
