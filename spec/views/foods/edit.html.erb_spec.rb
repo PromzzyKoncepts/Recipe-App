@@ -1,24 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe 'foods/edit', type: :view do
-  let(:food) do
-    Food.create!(
+  before :each do
+    @user = User.create!(name: 'Khusniddin')
+    @food = Food.create!(
       name: 'MyString',
       measurement_unit: 'MyString',
       quantity: 1,
       price: '9.99',
-      user: nil
+      user_id: @user
     )
   end
+  # let(:food) do
+  #   Food.create!(
+  #     name: 'MyString',
+  #     measurement_unit: 'MyString',
+  #     quantity: 1,
+  #     price: '9.99',
+  #     user_id: @user.id
+  #   )
+  # end
 
-  before(:each) do
-    assign(:food, food)
-  end
+  # before(:each) do
+  #   assign(:food, food)
+  # end
 
   it 'renders the edit food form' do
     render
 
-    assert_select 'form[action=?][method=?]', food_path(food), 'post' do
+    assert_select 'form[action=?][method=?]', food_path(@food), 'post' do
       assert_select 'input[name=?]', 'food[name]'
 
       assert_select 'input[name=?]', 'food[measurement_unit]'
