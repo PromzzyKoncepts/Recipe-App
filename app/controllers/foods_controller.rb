@@ -12,6 +12,7 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
+    render 'new'
   end
 
   # GET /foods/1/edit
