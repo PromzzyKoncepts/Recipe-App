@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Measurement unit</th>
+    <th>Quantity</th>
     <th>Unit price</th>
     <th>Actions</th>
     <th>View</th>
@@ -14,6 +15,7 @@
       <%= food.name %>
       </td>
       <td class="table_data"><%= food.measurement_unit %></td>
+      <td class="table_data"><%= food.quantity %></td>
       <td class="table_data">$<%= food.price %></td>
       <td class="table_data"><%= button_to "Delete", food, method: :delete, class: "btn_delete" %></td>
       <td class="table_data"><%= link_to "Show", food, class: "btn_delete" %></td>
