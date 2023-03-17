@@ -21,7 +21,7 @@ RSpec.describe '/foods', type: :request do
     @foods = Food.create(name: 'carrots', measurement_unit: 'grammes', price: 30, quantity: 5, user_id: @user.id)
   end
   let(:valid_attributes) do
-    { name: 'apple', measurement_unit: 'units', price: 10, quantity: 8, user_id: @user.id}
+    { name: 'apple', measurement_unit: 'units', price: 10, quantity: 8, user_id: @user.id }
   end
 
   let(:invalid_attributes) do
@@ -55,5 +55,4 @@ RSpec.describe '/foods', type: :request do
       expect(response).to have_http_status(:found)
     end
   end
-
 end

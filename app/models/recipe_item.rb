@@ -3,6 +3,8 @@ class RecipeItem < ApplicationRecord
   has_many :recipe_foods, dependent: :destroy
   has_many :foods, through: :recipe_foods, dependent: :destroy
 
+  validates :name, :preparation_time, :cooking_time, :description, presence: true
+
   def total_cost
     total = 0
 

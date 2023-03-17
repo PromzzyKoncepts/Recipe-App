@@ -16,45 +16,38 @@ RSpec.describe '/recipe_foods', type: :request do
   before :each do
     @user = User.create(name: 'Promise')
     @food = Food.create(name: 'carrots',
-      measurement_unit: 'grammes',
-      price: 30, quantity: 5, user_id: @user.id
-    )
+                        measurement_unit: 'grammes',
+                        price: 30, quantity: 5, user_id: @user.id)
 
     @recipe_item1 = RecipeItem.create(name: 'how to make carrot stew',
-      preparation_time: 1, cooking_time: 3,
-      description: 'This is how to make a carrot stew',
-      public: true,
-      user_id: @user.id
-    )
+                                      preparation_time: 1, cooking_time: 3,
+                                      description: 'This is how to make a carrot stew',
+                                      public: true,
+                                      user_id: @user.id)
     @recipe_item2 = RecipeItem.create(name: 'how to make carrot stew',
-      preparation_time: 1, cooking_time: 3,
-      description: 'This is how to make a carrot stew',
-      public: true,
-      user_id: @user.id
-    )
+                                      preparation_time: 1, cooking_time: 3,
+                                      description: 'This is how to make a carrot stew',
+                                      public: true,
+                                      user_id: @user.id)
     @recipe_item3 = RecipeItem.create(name: 'how to make carrot stew',
-      preparation_time: 1, cooking_time: 3,
-      description: 'This is how to make a carrot stew',
-      public: true,
-      user_id: @user.id
-    )
+                                      preparation_time: 1, cooking_time: 3,
+                                      description: 'This is how to make a carrot stew',
+                                      public: true,
+                                      user_id: @user.id)
 
-    @recipe_food1 = RecipeFood.create(quantity: 5, 
-      recipe_item_id: @recipe_item1.id, 
-      food_id: @food.id
-    )
-    @recipe_food2 = RecipeFood.create(quantity: 6, 
-      recipe_item_id: @recipe_item2.id, 
-      food_id: @food.id
-    )
-    @recipe_food3 = RecipeFood.create(quantity: 7, 
-      recipe_item_id: @recipe_item3.id, 
-      food_id: @food.id
-    )
+    @recipe_food1 = RecipeFood.create(quantity: 5,
+                                      recipe_item_id: @recipe_item1.id,
+                                      food_id: @food.id)
+    @recipe_food2 = RecipeFood.create(quantity: 6,
+                                      recipe_item_id: @recipe_item2.id,
+                                      food_id: @food.id)
+    @recipe_food3 = RecipeFood.create(quantity: 7,
+                                      recipe_item_id: @recipe_item3.id,
+                                      food_id: @food.id)
   end
 
   it 'displays the recipe foods page' do
-    get "/recipe_foods"
+    get '/recipe_foods'
     expect(@recipe_food1.quantity).to eq(5)
     expect(@recipe_food2.quantity).to eq(6)
     expect(@recipe_food3.quantity).to eq(7)
@@ -62,10 +55,10 @@ RSpec.describe '/recipe_foods', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      RecipeFood.create(quantity: 7, 
-      recipe_item_id: @recipe_item3.id, 
-      food_id: @food.id)
-      get "/recipe_foods"
+      RecipeFood.create(quantity: 7,
+                        recipe_item_id: @recipe_item3.id,
+                        food_id: @food.id)
+      get '/recipe_foods'
       expect(response).to have_http_status(:found)
     end
   end
@@ -73,8 +66,8 @@ RSpec.describe '/recipe_foods', type: :request do
   describe 'GET /show' do
     it 'renders a successful response' do
       recipe_food = RecipeFood.create(quantity: 7,
-      recipe_item_id: @recipe_item3.id, 
-      food_id: @food.id)
+                                      recipe_item_id: @recipe_item3.id,
+                                      food_id: @food.id)
       get "/recipe_foods/#{recipe_food.id}"
       expect(response).to have_http_status(:found)
     end
@@ -82,7 +75,7 @@ RSpec.describe '/recipe_foods', type: :request do
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get "/recipe_foods/new"
+      get '/recipe_foods/new'
       expect(response).to have_http_status(:found)
     end
   end
@@ -90,8 +83,8 @@ RSpec.describe '/recipe_foods', type: :request do
   describe 'GET /edit' do
     it 'renders a successful response' do
       recipe_food = RecipeFood.create(quantity: 7,
-      recipe_item_id: @recipe_item3.id, 
-      food_id: @food.id)
+                                      recipe_item_id: @recipe_item3.id,
+                                      food_id: @food.id)
       get "/recipe_foods/#{recipe_food.id}/edit"
       expect(response).to have_http_status(:found)
     end
