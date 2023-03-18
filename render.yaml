@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: Promise
+    databaseName: promise_0taz
+    user: promise_0taz_user
 
 services:
   - type: web
-    name: mysite
+    name: My Recipe
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: promise_0taz
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
